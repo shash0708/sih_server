@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
 const app = express();
-
+app.use(cors());
 mongoose.set("strictQuery", true);
 const url = process.env.MONGODB_URL;
 const port = process.env.PORT || 9000;
@@ -25,8 +25,7 @@ const translateRouter = require("./routes/index");
 app.use("/", translateRouter);
 app.use("/", linkRouter);
 // app.use("/", testRouter);
-app.use(express.json());
-app.use(cors());
+
 
 
 app.listen(port, () => {
