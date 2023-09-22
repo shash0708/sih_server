@@ -1,4 +1,5 @@
 const { OpenAI } = require('openai');
+const dotenv =require('dotenv');
 require('dotenv').config();
 
 // Load the OpenAI API key from environment variables or use a default key
