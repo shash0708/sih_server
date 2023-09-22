@@ -13,8 +13,6 @@ const endpoint =
   "https://rohi-123.cognitiveservices.azure.com/";
 
 // sample document
-const formUrl =
-  "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/sample-layout.pdf";
 async function extract(formUrl) {
   try {
     const client = new DocumentAnalysisClient(
@@ -28,14 +26,12 @@ async function extract(formUrl) {
     );
 
     const { content } = await poller.pollUntilDone();
-
-    if (content <= 0) {
-      console.log("No key-value pairs were extracted from the document.");
-    } else {
-        console.log(content);
-      return content;
-
-    }
+    return content;
+    // if (content <= 0) {
+    //   console.log("No key-value pairs were extracted from the document.");
+    // } else {
+    //     console.log(content);
+    // }
   } catch (err) {
     console.log(err);
   }

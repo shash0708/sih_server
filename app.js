@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
-
 const cors = require("cors");
 const app = express();
 
@@ -19,10 +18,11 @@ app.use(express.json());
 app.get('/',(req,res)=>{
   res.send('Welcome')
 })
-// const userRouter = require("./router/users");
+
 // const linkRouter = require("./router/linkedin");
 // const testRouter = require("./router/test");
-// app.use("/", userRouter);
+const translateRouter=require("./routes/index");
+app.use("/", translateRouter);
 // app.use("/", linkRouter);
 // app.use("/", testRouter);
 app.use(express.json());
