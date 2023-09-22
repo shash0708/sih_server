@@ -32,6 +32,7 @@ async function translate(text, from, to) {
       responseType: 'json'
     });
     const translations = response.data.map(({translations}) => translations.map(({text}) => text));
+    console.log(translations[0][0]);
     return translations[0][0];
   } catch (error) {
     console.error(error);
@@ -39,4 +40,4 @@ async function translate(text, from, to) {
   }
 }
 
-module.exports = translate;
+module.exports = {translate};

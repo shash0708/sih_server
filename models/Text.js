@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
-const textSchema = mongoose.Schema({
-    link: {
+const textSchema = new mongoose.Schema({
+    fileUrl: {
         type: String,
         required: true
     },
     text: {
-        type: String,
-        required: true
-    },
-    timestamps: true
+      type: String,
+      required: true
     }
-)
+  }, {
+    timestamps: true // enable automatic timestamp fields
+  });
 const Text = mongoose.model("Text", textSchema);
 module.exports = Text;

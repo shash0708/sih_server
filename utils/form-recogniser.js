@@ -26,6 +26,7 @@ async function extract(formUrl) {
     );
 
     const { content } = await poller.pollUntilDone();
+    console.log(content);
     return content;
     // if (content <= 0) {
     //   console.log("No key-value pairs were extracted from the document.");
@@ -37,4 +38,4 @@ async function extract(formUrl) {
   }
 }
 
-module.exports = extract;
+module.exports = {extract};
