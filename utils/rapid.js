@@ -7,7 +7,7 @@ const options = {
   url:  process.env.RAPID_API_URL ||'https://open-ai21.p.rapidapi.com/summary',
   headers: {
     'content-type': 'application/json',
-    'X-RapidAPI-Key': process.env.RAPID_API_KEY ||'08c766dfb2msh6d00b8d4358723ep1a2161jsn420366549ee8',
+    'X-RapidAPI-Key': process.env.RAPID_API_KEY ||'31d736b52dmsh7c243f1b5f035c5p1fb83cjsnb390540d488f',
     'X-RapidAPI-Host': process.env.RAPID_API_HOST ||'open-ai21.p.rapidapi.com'
   },
   data: {
