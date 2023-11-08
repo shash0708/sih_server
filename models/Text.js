@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const textSchema = new mongoose.Schema(
+const doc_to_translateSchema = new mongoose.Schema(
   {
     fileUrl: {
       type: String,
@@ -22,5 +22,5 @@ const textSchema = new mongoose.Schema(
     timestamps: true, // enable automatic timestamp fields
   }
 );
-const Text = mongoose.model("Text", textSchema);
+const Text = mongoose.model("Text", doc_to_translateSchema);
 module.exports = Text;

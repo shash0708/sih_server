@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const docSchema = new mongoose.Schema(
+const doc_to_docSchema = new mongoose.Schema(
   {
     beforeLink: {
       type: String,
@@ -14,5 +14,5 @@ const docSchema = new mongoose.Schema(
     timestamps: true, // enable automatic timestamp fields
   }
 );
-const Doc = mongoose.model("Doc", docSchema);
+const Doc = mongoose.model("Doc", doc_to_docSchema);
 module.exports = Doc;
