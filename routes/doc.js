@@ -45,14 +45,7 @@ router.post("/process", async (req, res) => {
   }
 });
 
-router.post("/summaryText", (req, res) => {
-  const { text } = req.body;
-  const summary = rapid.generateSummary(text);
-  res.json({
-    success: true,
-    summary: summary,
-  });
-});
+
 
 router.post("/summaryDocument", async (req, res) => {
   const { fileUrl, targetLanguage } = req.body;

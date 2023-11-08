@@ -20,13 +20,14 @@ app.get("/", (req, res) => {
 });
 
 const linkRouter = require("./routes/history");
-// const testRouter = require("./router/test");
-const translateRouter = require("./routes/index");
-const stableDiffusionRouter = require("./routes/stable-diffusion");
+const translateRouter = require("./routes/doc");
+const stableDiffusionRouter = require("./routes/replicate");
+const textRouter = require("./routes/text");
+app.use("/", textRouter);
 app.use("/", stableDiffusionRouter);
 app.use("/", translateRouter);
 app.use("/", linkRouter);
-// app.use("/", testRouter);
+
 
 
 
