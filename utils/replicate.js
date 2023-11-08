@@ -14,7 +14,7 @@ const imageGeneration = async (prompt) => {
     return output;
   } catch (error) {
     console.error(error);
-    return null;
+    return error;
   }
 };
 
