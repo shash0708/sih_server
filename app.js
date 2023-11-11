@@ -21,10 +21,10 @@ app.get("/", (req, res) => {
 
 const linkRouter = require("./routes/history");
 const translateRouter = require("./routes/doc");
-const stableDiffusionRouter = require("./routes/replicate");
+const replicateRouter = require("./routes/replicate");
 const textRouter = require("./routes/text");
 app.use("/", textRouter);
-app.use("/", stableDiffusionRouter);
+app.use("/", replicateRouter);
 app.use("/", translateRouter);
 app.use("/", linkRouter);
 

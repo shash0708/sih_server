@@ -30,4 +30,23 @@ router.post("/ask-question", async (req, res) => {
   }
 });
 
+router.get("/chat-completion/:prompt", async (req, res) => {
+  const prompt  = req.params.prompt;
+  console.log(prompt);
+  try {
+    const output=await replicate.chatCompletion(prompt);
+    let element = ""; // change const to let here
+    for (let i = 0; i < output.length; i++) {
+      element = element + output[i];
+    }
+    res.json({
+      success: true,
+      output: element,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An error occurred.");
+  }
+});
+
 module.exports = router;
